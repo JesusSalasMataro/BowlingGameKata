@@ -32,7 +32,59 @@ namespace BowlingGameKata
 
         private int FrameScore(int frame)
         {
-            return int.Parse(_rollsSequence[frame].ToString()) + int.Parse(_rollsSequence[frame + 1].ToString());
+            int firstFrameRoll, secondFrameRoll, bonusPoints, frameScore;            
+         
+            if (RollIsSpare(frame))
+            {                
+                frameScore = 10;
+            }
+            else
+            {
+                firstFrameRoll = FirstRollOfFrame(frame);
+                secondFrameRoll = SecondRollOfFrame(frame);
+                bonusPoints = 0;
+
+                if (PreviousRollWasSpare(frame))
+                {
+                    bonusPoints = FirstRollOfFrame(frame);
+                }
+
+                frameScore = firstFrameRoll + secondFrameRoll + bonusPoints;
+            }
+
+            return frameScore;
+        }
+
+        private bool RollIsSpare(int frame)
+        {
+            return _rollsSequence[frame * 2 + 1] == '/';
+        }
+
+        private bool PreviousRollWasSpare(int frame)
+        {
+            if (!FirstGameFrame(frame))
+            {
+                return _rollsSequence[frame * 2 - 1] == '/';
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private int FirstRollOfFrame(int frame)
+        {
+            return int.Parse(_rollsSequence[frame * 2].ToString());
+        }
+
+        private int SecondRollOfFrame(int frame)
+        {
+            return int.Parse(_rollsSequence[frame * 2 + 1].ToString());
+        }
+
+        private bool FirstGameFrame(int frame)
+        {
+            return frame == 0;
         }
     }
 }

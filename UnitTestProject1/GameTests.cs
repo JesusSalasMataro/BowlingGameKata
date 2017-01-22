@@ -22,5 +22,18 @@ namespace BowlingGameTests
             Assert.AreEqual(80, actualScore);
         }
 
+        [TestMethod]
+        public void When_Bowler_Achieves_Spare_FrameScore_Is_10Points_Plus_Pins_Knocked_Down_In_Next_Roll()
+        {
+            // ARRANGE
+            string rollsSequence = "5/535353535353535353";
+            BowlingGame bowlingGame = new BowlingGame(rollsSequence);
+
+            // ACT
+            int actualScore = bowlingGame.GetFinalScore();
+
+            // ASSERT
+            Assert.AreEqual(87, actualScore);
+        }
     }
 }
