@@ -8,83 +8,73 @@ namespace BowlingGameKata
 {
     public class BowlingGame
     {
-        private readonly int MAX_GAME_FRAMES = 10;
+        private readonly int TOTAL_FRAMES = 10;
 
-        private string _rollsSequence;   
+        private FrameSequence _frameSequence;
              
 
         public BowlingGame(string rollsSequence)
         {
-            _rollsSequence = rollsSequence;
+            _frameSequence = new FrameSequence(rollsSequence);
         }
 
         public int GetFinalScore()
         {
             int score = 0;
+            List<Frame> frames = _frameSequence.ToList();
 
-            for (int frame = 0; frame < MAX_GAME_FRAMES; frame++)
+            for (int i = 0; i < TOTAL_FRAMES; i++)
             {
-                score += FrameScore(frame);
+                score += GetFrameScore(frames, i);
             }
 
             return score;
         }
 
-        private int FrameScore(int frame)
+        private int GetFrameScore(List<Frame> frames, int index)
         {
-            int firstFrameRoll, secondFrameRoll, bonusPoints, frameScore;            
-         
-            if (RollIsSpare(frame))
-            {                
-                frameScore = 10;
+            if (IsFinalFrame(index))
+            {
+                return frames[index].PinsKnockedDown();
             }
             else
             {
-                firstFrameRoll = FirstRollOfFrame(frame);
-                secondFrameRoll = SecondRollOfFrame(frame);
-                bonusPoints = 0;
-
-                if (PreviousRollWasSpare(frame))
+                if (frames[index].IsStrike())
                 {
-                    bonusPoints = FirstRollOfFrame(frame);
+                    if (frames[index + 1].IsStrike())
+                    {
+                        if (IsFinalFrame(index + 1))
+                        {
+                            return frames[index].PinsKnockedDown() +
+                                frames[index + 1].PinsKnockedDownFirstRoll + frames[index + 1].PinsKnockedDownSecondRoll;
+                        }
+                        else
+                        {
+                            return frames[index].PinsKnockedDown() +
+                                frames[index + 1].PinsKnockedDownFirstRoll + frames[index + 2].PinsKnockedDownFirstRoll;
+                        }
+                    }
+                    else
+                    {
+                        return frames[index].PinsKnockedDown() +
+                            frames[index + 1].PinsKnockedDownFirstRoll + frames[index + 1].PinsKnockedDownSecondRoll;
+                    }
                 }
-
-                frameScore = firstFrameRoll + secondFrameRoll + bonusPoints;
-            }
-
-            return frameScore;
-        }
-
-        private bool RollIsSpare(int frame)
-        {
-            return _rollsSequence[frame * 2 + 1] == '/';
-        }
-
-        private bool PreviousRollWasSpare(int frame)
-        {
-            if (!FirstGameFrame(frame))
-            {
-                return _rollsSequence[frame * 2 - 1] == '/';
-            }
-            else
-            {
-                return false;
+                else if (frames[index].IsSpare())
+                {
+                    return frames[index].PinsKnockedDown() + frames[index + 1].PinsKnockedDownFirstRoll;
+                }
+                else
+                {
+                    return frames[index].PinsKnockedDown();
+                }
             }
         }
 
-        private int FirstRollOfFrame(int frame)
+        private bool IsFinalFrame(int index)
         {
-            return int.Parse(_rollsSequence[frame * 2].ToString());
+            return index == TOTAL_FRAMES - 1;
         }
 
-        private int SecondRollOfFrame(int frame)
-        {
-            return int.Parse(_rollsSequence[frame * 2 + 1].ToString());
-        }
-
-        private bool FirstGameFrame(int frame)
-        {
-            return frame == 0;
-        }
     }
 }
