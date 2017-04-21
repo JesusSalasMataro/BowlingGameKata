@@ -8,7 +8,7 @@ namespace BowlingGameKata
 {
     public class BowlingGame
     {
-        private readonly int TOTAL_FRAMES = 10;
+        private readonly int TOTALFRAMES = 10;
 
         private FrameSequence _frameSequence;
              
@@ -23,7 +23,7 @@ namespace BowlingGameKata
             int score = 0;
             List<Frame> frames = _frameSequence.ToList();
 
-            for (int i = 0; i < TOTAL_FRAMES; i++)
+            for (int i = 0; i < TOTALFRAMES; i++)
             {
                 score += GetFrameScore(frames, i);
             }
@@ -73,7 +73,7 @@ namespace BowlingGameKata
 
         private bool IsFinalFrame(int index)
         {
-            return index == TOTAL_FRAMES - 1;
+            return index == TOTALFRAMES - 1;
         }
 
     }
