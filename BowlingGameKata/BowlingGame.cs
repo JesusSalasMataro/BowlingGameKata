@@ -9,7 +9,6 @@ namespace BowlingGameKata
     public class BowlingGame
     {
         private readonly int TOTAL_FRAMES = 10;
-
         private FrameSequence _frameSequence;
              
 
