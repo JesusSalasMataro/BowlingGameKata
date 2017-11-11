@@ -1,0 +1,7 @@
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\BowlingGameKata2\BowlingGameKata2UnitTests\obj\Debug\BowlingGameKata2UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\BowlingGameKata2\BowlingGameKata2UnitTests\bin\Debug\BowlingGameKata2UnitTests.dll
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\BowlingGameKata2\BowlingGameKata2UnitTests\bin\Debug\BowlingGameKata2UnitTests.pdb
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\BowlingGameKata2\BowlingGameKata2UnitTests\bin\Debug\BowlingGameKata2.dll
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\BowlingGameKata2\BowlingGameKata2UnitTests\bin\Debug\BowlingGameKata2.pdb
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\BowlingGameKata2\BowlingGameKata2UnitTests\obj\Debug\BowlingGameKata2UnitTests.dll
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\BowlingGameKata2\BowlingGameKata2UnitTests\obj\Debug\BowlingGameKata2UnitTests.pdb

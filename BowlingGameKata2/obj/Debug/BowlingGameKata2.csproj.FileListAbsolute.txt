@@ -1,0 +1,4 @@
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\BowlingGameKata2\BowlingGameKata2\bin\Debug\BowlingGameKata2.dll
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\BowlingGameKata2\BowlingGameKata2\bin\Debug\BowlingGameKata2.pdb
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\BowlingGameKata2\BowlingGameKata2\obj\Debug\BowlingGameKata2.dll
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\BowlingGameKata2\BowlingGameKata2\obj\Debug\BowlingGameKata2.pdb
