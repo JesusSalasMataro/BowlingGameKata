@@ -2,4 +2,5 @@
 **/obj
 **/Properties
 **/TestResults
+**/*.user
 *.suo
