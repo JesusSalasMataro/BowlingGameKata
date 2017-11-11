@@ -3,6 +3,6 @@
 **/Properties
 **/TestResults
 ./BowlingGameKata/*.user
-/packages
+./packages
 *.suo
-/.sonar
+./.sonar
