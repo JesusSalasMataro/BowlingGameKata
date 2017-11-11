@@ -2,5 +2,7 @@
 **/obj
 **/Properties
 **/TestResults
-**/*.user
+./BowlingGameKata/*.user
+/packages
 *.suo
+/.sonar
